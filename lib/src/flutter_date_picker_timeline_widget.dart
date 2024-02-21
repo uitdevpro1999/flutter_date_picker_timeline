@@ -30,6 +30,7 @@ class FlutterDatePickerTimeline extends StatefulWidget {
     this.unselectedItemBackgroundColor = Colors.white,
     this.selectedItemTextStyle,
     this.unselectedItemTextStyle,
+    this.selectedItemGradientColor,
     required this.onSelectedDateChange,
   })  : assert((endDate.isSameDate(startDate) || endDate.isAfter(startDate)),
             "The end date must be same or before the start date!"),
@@ -108,6 +109,7 @@ class FlutterDatePickerTimeline extends StatefulWidget {
   ///
   /// Defaults to [const Color(0xFF2B2C30)]
   final Color selectedItemBackgroundColor;
+  final Gradient? selectedItemGradientColor;
 
   /// Used for setting the color of unselected items background.
   ///
@@ -222,6 +224,7 @@ class _FlutterDatePickerTimelineState extends State<FlutterDatePickerTimeline> {
                                         widget.selectedItemBackgroundColor,
                                     textStyle: widget.selectedItemTextStyle ??
                                         _defaultSelectedItemTextStyle,
+                                  itemBackgroundGradient: widget.selectedItemGradientColor,
                                   )
                                 : DatePickerItemUnselected(
                                     date: itemDate,

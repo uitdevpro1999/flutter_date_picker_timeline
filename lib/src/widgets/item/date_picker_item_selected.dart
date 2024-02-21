@@ -10,7 +10,8 @@ class DatePickerItemSelected extends StatelessWidget {
       required this.itemRadius,
       required this.itemMargin,
       required this.itemBackgroundColor,
-      required this.textStyle});
+      required this.textStyle,
+      this.itemBackgroundGradient,});
 
   final DateTime date;
   final CalendarMode calendarMode;
@@ -18,6 +19,8 @@ class DatePickerItemSelected extends StatelessWidget {
   final double itemRadius;
   final EdgeInsets itemMargin;
   final Color itemBackgroundColor;
+  final Gradient? itemBackgroundGradient;
+
   final TextStyle textStyle;
 
   @override
@@ -27,6 +30,7 @@ class DatePickerItemSelected extends StatelessWidget {
         margin: itemMargin,
         decoration: new BoxDecoration(
             color: itemBackgroundColor,
+            gradient: itemBackgroundGradient,
             borderRadius: BorderRadius.all(Radius.circular(itemRadius))),
         child: Center(
             child: Text(
