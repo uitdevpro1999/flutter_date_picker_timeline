@@ -20,7 +20,7 @@ extension DateHelperExtension on DateTime {
   }
 
   String getGregorianWeekDayAndDate() {
-    final f = DateFormat('EEEE, d MMMMM');
+    final f = DateFormat('EEEE, d MMMM');
 
     return f.format(this);
   }
